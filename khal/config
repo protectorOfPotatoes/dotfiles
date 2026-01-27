@@ -1,0 +1,15 @@
+[calendars]
+
+[[private]]
+path = /home/adi/.local/share/khal/calendars/private
+type = calendar
+
+[locale]
+timeformat = %I:%M %p
+dateformat = "%A %d.%m.%y"
+longdateformat = "%A %d.%m.%y"
+datetimeformat = "%A %d.%m.%y" %I:%M %p
+longdatetimeformat = "%A %d.%m.%y" %I:%M %p
+
+[default]
+default_calendar = private

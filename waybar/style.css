@@ -1,0 +1,192 @@
+@define-color background #181926;
+@define-color second-background #292a35;
+@define-color text #f5e0dc;
+@define-color borders #99d1db;
+@define-color focused #99d1db;
+@define-color focused2 #babbf1;
+@define-color color1 #99d1db; /* Cyan/Blue highlight */
+@define-color color2 #bb9af7; /* Purple */
+@define-color color3 #9ece6a; /* Green */
+@define-color urgent #f7768e; /* Red */
+
+/* Global Font Settings */
+* {
+    /* Hack is wider than Iosevka, so 13px or 14px usually looks best */
+    font-family: "Hack Nerd Font", "Hack NF";
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* The Bar Container */
+window#waybar {
+    background-color: transparent;
+    color: @text;
+}
+
+/* --- The Three Islands --- */
+/* This creates the floating block look for Niri */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 5px 5px 0 5px;
+    padding: 0px 8px;
+    background-color: @background;
+    border: 0px solid rgba(153, 209, 219, 0.2); /* Subtle border from previous theme */
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific spacing for edges */
+.modules-left { margin-left: 10px; }
+.modules-right { margin-right: 10px; }
+
+#custom-visualizer {
+    color: @text; 
+    background: @background; 
+    padding: 0 10px;
+    margin-left: 10px;
+    border-radius: 50px;
+    font-family: "Hack Nerd Font";
+}
+
+/* FIX #1: Stop the center container from taking up all available space */
+
+
+
+/* --- Left Island Modules --- */
+
+#custom-arch,
+#custom-powerprofile,
+#custom-themeswitcher {
+    padding: 0 8px;
+    transition: color 0.2s ease;
+}
+
+#custom-arch:hover,
+#custom-powerprofile:hover,
+#custom-themeswitcher:hover {
+    color: @color1;
+}
+
+/* Workspace Buttons (Niri/Waybar standard) */
+#workspaces button {
+    padding: 0 8px;
+    color: @text;
+    background: @background;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background-color: @second-background;
+    color: @text;
+}
+
+#workspaces button.active {
+    color: @focused;
+    background-color: rgba(238, 190, 190, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.urgent {
+    background-color: @urgent;
+    color: #ffffff;
+}
+
+/* --- Media Player (Mpris) --- */
+#mpris {
+    padding: 0 10px;
+    margin-left: 5px;
+}
+
+#mpris.playing {
+    color: @color3;
+}
+
+/* --- Center Island (Window Title) --- */
+#clock{
+font-weight: bold;
+    color: @text;
+    background: @background;
+    padding: 0 10px; /* Sufficient padding for content */
+    /* This makes the text pop against the background */
+    text-shadow: 0 0 2px rgba(0,0,0,0.5);
+    border-radius: 50px;
+}
+#clock:hover{
+background-color: @second-background;
+    border-radius: 50px;
+
+}
+
+#window > icon {
+    margin-right: 8px;
+}
+
+/* FIX #2: Hide the module entirely if the window title is empty */
+#window.empty {
+    opacity: 0;
+    padding: 3;
+    margin: 0;
+    /* You may need this if your main container's background is still showing */
+    /* background-color: transparent; */ 
+}
+
+
+/* --- Right Island Modules --- */
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#wireplumber,
+#backlight,
+#custom-swaync {
+    padding: 0 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+
+
+
+
+/* Hover effects for all right modules */
+ #battery:hover, #network:hover, #pulseaudio:hover, #backlight:hover, #cpu:hover, #memory:hover {
+    background-color: @second-background;
+    border-radius: 50px;
+}
+
+/* Battery States */
+#battery.charging, #battery.plugged {
+    color: @color3;
+}
+
+#battery.critical:not(.charging) {
+    color: @urgent;
+    animation: blink 0.5s steps(12) infinite alternate;
+}
+
+/* Audio States */
+#pulseaudio.muted {
+    color: #565f89; /* Dimmed gray-blue */
+}
+
+/* --- Animations & Fixes --- */
+@keyframes blink {
+    to {
+        background-color: @urgent;
+        color: @text;
+    }
+}
+
+/* This removes extra margin if workspaces is the first/last item in the island */
+.modules-left > widget:first-child > #workspaces { margin-left: 0; }
+.modules-right > widget:last-child > #workspaces { margin-right: 0; }
+
+/* Tooltip styling */
+tooltip {
+    background-color: @background;
+    border: 1px solid @focused;
+    border-radius: 8px;
+}
+

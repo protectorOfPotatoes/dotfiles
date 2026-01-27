@@ -1,0 +1,23 @@
+bold_font        auto
+font_family      family="JetBrains Mono"
+font_family      Hack Nerd Font     
+italic_font      auto
+bold_italic_font auto
+
+window_padding_width 16
+
+background_opacity 1
+
+shell /bin/bash
+
+confirm_os_window_close 0
+
+detect_urls yes
+
+
+# BEGIN_KITTY_THEME
+# Cyberpunk
+include current-theme.conf
+# END_KITTY_THEME
+
+

@@ -1,0 +1,8 @@
+Benzoic
+COOH
+Ortho
+Steric
+alkylanilinium
+ortho
+protonate
+checksum_v1 = 3bc87295223d768aa6627f1e24952908

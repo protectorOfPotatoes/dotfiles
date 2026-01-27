@@ -1,0 +1,30 @@
+2026-01-12 20:22:37 Loading main app package /usr/lib/obsidian/obsidian.asar
+2026-01-12 20:22:37 Checking for update using Github
+2026-01-12 20:22:38 Success.
+2026-01-12 20:22:38 Latest version is 1.11.4
+2026-01-12 20:22:38 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.11.4/obsidian-1.11.4.asar.gz
+2026-01-12 20:22:42 Verifying hash & signature. Size= 8769455
+2026-01-12 20:22:42 Saving file
+2026-01-12 20:22:42 Update complete.
+2026-01-12 21:22:37 Checking for update using Github
+2026-01-12 21:22:37 Success.
+2026-01-12 21:22:37 Latest version is 1.11.4
+2026-01-12 21:22:37 An update is already downloaded.
+2026-01-12 21:56:27 Loading updated app package /home/adi/.config/obsidian/obsidian-1.11.4.asar
+2026-01-12 21:56:27 Checking for update using Github
+2026-01-12 21:56:27 Success.
+2026-01-12 21:56:27 Latest version is 1.11.4
+2026-01-12 21:56:27 App is up to date.
+2026-01-13 13:43:12 Loading updated app package /home/adi/.config/obsidian/obsidian-1.11.4.asar
+2026-01-13 13:43:12 Checking for update using Github
+2026-01-13 13:43:13 Success.
+2026-01-13 13:43:13 Latest version is 1.11.4
+2026-01-13 13:43:13 App is up to date.
+2026-01-26 11:59:21 Loading main app package /usr/lib/obsidian/obsidian.asar
+2026-01-26 11:59:22 Checking for update using Github
+2026-01-26 11:59:22 Success.
+2026-01-26 11:59:22 Latest version is 1.11.5
+2026-01-26 11:59:22 Downloading update from https://github.com/obsidianmd/obsidian-releases/releases/download/v1.11.5/obsidian-1.11.5.asar.gz
+2026-01-26 11:59:23 Verifying hash & signature. Size= 8771203
+2026-01-26 11:59:23 Saving file
+2026-01-26 11:59:24 Update complete.

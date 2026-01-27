@@ -1,0 +1,242 @@
+[{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "spacing": 5,
+
+    "modules-left": [
+        "group/Utilities",
+        "group/workspaces",
+        "custom/visualizer"
+    ],
+
+    "modules-center": [
+        "group/windows"
+    ],
+
+    "modules-right": [
+        "group/cpuram",
+        "group/brightvol",
+        "group/system"
+    ],
+
+    // --- SHARED COMPONENTS ---
+   /* "custom/split": {
+        "format": "|",
+        "tooltip": false
+    },*/
+
+    // --- LEFT GROUPS ---
+    "group/Utilities": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/arch",
+            //"custom/split",
+            "custom/power"
+            //"custom/split"
+        ]
+    },
+
+    "custom/arch": {
+        "format": "󰣇 ",
+        "tooltip": false,
+        "on-click": "fuzzel"
+    },
+    "custom/visualizer": {
+    "exec": "python3 ~/.config/waybar/scripts/waybar_cava.py",
+    "format": "{}",
+    "restart-interval": 1
+},
+
+"custom/power": {
+          "format" : "   ",
+          "tooltip": false,
+          "on-click": "wlogout", // Opens your wlogout menu
+          "on-click-right": "wlogout --protocol layer-shell"
+        },
+
+/*    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "custom/powerprofile": {
+        "exec": "~/.config/waybar/scripts/powerprofile.sh display",
+        "on-click": "~/.config/waybar/scripts/powerprofile.sh toggle",
+        "interval": 5,
+        "tooltip": true,
+        "exec-tooltip": "~/.config/waybar/scripts/powerprofile.sh tooltip",
+        "tooltip-format": "Power Profile: {} \nClick to cycle: Efficient → Normal → Overclocked"
+    },
+*/
+    "group/workspaces": {
+        "orientation": "horizontal",
+        "modules": ["niri/workspaces"]
+    },
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "default": "•"
+        }
+    },
+
+
+
+    // --- CENTER GROUPS ---
+    "group/windows": {
+        "orientation": "horizontal",
+        "modules": [
+          "clock",
+          "niri/window"
+        ]
+    },
+
+
+
+"niri/window": {
+    "format": "{app_id}",
+    "rewrite": {
+        // Firefox icon ()
+        "(.*)firefox": " ",
+        "(.*)kitty": " ",
+        "(.*)discord": " ",
+
+        "(.*)": "$1"
+    },
+},
+    "clock": {
+        "format": "{:%b %d %Y  %I:%M%p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+//        "on-click": "kalender"
+        "calendar": {
+    "mode"          : "month",
+    "on-scroll"     : 1,
+    "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+    }
+  }
+},
+
+
+    // --- RIGHT GROUPS ---
+    "group/cpuram": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            //"custom/split",
+            "memory"
+        ]
+    },
+
+    "cpu": {
+        "format": "CPU:{usage}%",
+        "interval": 2,
+        "on-click": "kitty -e htop"
+    },
+
+    "memory": {
+        "format": "RAM:{}%",
+        "interval": 2,
+        "on-click": "kitty -e htop"
+    },
+
+    "group/brightvol": {
+        "orientation": "horizontal",
+        "modules": [
+            "backlight",
+            //"custom/split",
+            "pulseaudio" 
+        ]
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "{icon}{volume}% ",
+        "format-bluetooth-muted": "{ icon}",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ", 
+            "WH-CH520": " ",
+            "default": [" :", " :", " :"]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "on-click-right": "pavucontrol"
+    },
+
+    "backlight": {
+        "format": "{icon} :{percent}%",
+        "format-icons": ["", "", "🌙"],
+        "on-click": "~/.config/waybar/scripts/brightness_slider.sh"
+    },
+
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": [
+            //"custom/split",
+            "network",
+            "custom/bluetooth",
+            "battery",
+            "custom/swaync"
+        ]
+    },
+
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": "{icon}",
+        "format-ethernet": "{ifname}󰈀 LAN",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ipaddr}\n{ssid} ({signalStrength}%)",
+        "on-click": "kitty -e nmcli device wifi list",
+        "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ]
+    },
+
+   "custom/bluetooth": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
+        "interval": 5,
+        "on-click": "blueman-manager"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "󱐋{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+       
+    },
+
+    "custom/swaync": {
+        "format": "",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client --toggle-panel",
+        "interval": 0
+    }
+}]
+

@@ -1,0 +1,42 @@
+/* Solid Catppuccin Mocha Theme */
+window {
+    background-color: #11111b; /* Solid 'Crust' background */
+}
+
+button {
+    color: #cdd6f4; /* Text (Text) */
+    background-color: #313244; /* Button Color (Surface0) */
+    border: 2px solid #45475a; /* Border (Surface1) */
+    border-radius: 15px;
+    margin: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover/Focus States */
+button:focus, 
+button:active, 
+button:hover {
+    background-color: #45475a; /* Lighter (Surface1) */
+    border: 2px solid #89b4fa; /* Accent (Blue) */
+    color: #89b4fa;
+    outline-style: none;
+}
+
+/* Icon overrides - ensure these paths are correct for your system */
+#lock { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#suspend { background-image: image(url("/usr/share/wlogout/icons/suspend.png")); }
+#hibernate { background-image: image(url("/usr/share/wlogout/icons/hibernate.png")); }
+#shutdown { 
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); 
+}
+#reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }
+
+/* Optional: Make the Shutdown button red on hover */
+#shutdown:hover {
+    border: 2px solid #f38ba8; /* Red (Maroon) */
+    color: #f38ba8;
+}
