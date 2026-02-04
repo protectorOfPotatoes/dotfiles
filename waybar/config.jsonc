@@ -1,13 +1,13 @@
 [{
     "layer": "top",
     "position": "top",
-    "height": 40,
+    "height": 35,
     "spacing": 5,
 
     "modules-left": [
         "group/Utilities",
         "group/workspaces",
-        "custom/visualizer"
+        "group/appmenu"
     ],
 
     "modules-center": [
@@ -40,13 +40,41 @@
     "custom/arch": {
         "format": "󰣇 ",
         "tooltip": false,
-        "on-click": "fuzzel"
+        "on-click": "kitty"
     },
-    "custom/visualizer": {
+/*    "custom/visualizer": {
     "exec": "python3 ~/.config/waybar/scripts/waybar_cava.py",
     "format": "{}",
     "restart-interval": 1
+},*/
+"group/appmenu":
+{
+  "orientation": "horizontal",
+  "modules": [
+    "custom/discord", "custom/firefox", "custom/filemanager", "custom/obsidian"]
 },
+
+"custom/discord":{
+"format": "     ",
+"on-click": "flatpak run com.discordapp.Discord"
+},
+
+"custom/firefox":{
+"format":"    ",
+"on-click": "firefox"
+},
+
+"custom/filemanager":{
+  "format":"    ",
+  "on-click": "kitty -e yazi"
+},
+
+
+"custom/obsidian":{
+  "format":" 󰏫   ",
+  "on-click": "obsidian"
+},
+
 
 "custom/power": {
           "format" : "   ",
@@ -168,15 +196,14 @@
         "format": "{icon}{volume}%",
         "format-bluetooth": "{icon}{volume}% ",
         "format-bluetooth-muted": "{ icon}",
-        "format-muted": " ",
+        "format-muted": "󰝟 ",
         "format-icons": {
             "headphone": " ",
             "hands-free": " ",
-            "headset": " ",
+            "headset": "󰋎 ",
             "phone": " ",
             "portable": " ",
             "car": " ", 
-            "WH-CH520": " ",
             "default": [" :", " :", " :"]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -187,7 +214,7 @@
 
     "backlight": {
         "format": "{icon} :{percent}%",
-        "format-icons": ["", "", "🌙"],
+        "format-icons": [" ", " ", "󰖨 "],
         "on-click": "~/.config/waybar/scripts/brightness_slider.sh"
     },
 

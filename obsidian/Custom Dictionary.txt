@@ -1,8 +1,13 @@
+ArchBookPro
 Benzoic
 COOH
+Diksha
+Goggins
+IIT
+IITKGP
 Ortho
 Steric
 alkylanilinium
 ortho
 protonate
-checksum_v1 = 3bc87295223d768aa6627f1e24952908
+checksum_v1 = b1feb459713434c322f72d41536917e7

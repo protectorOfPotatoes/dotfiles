@@ -1,0 +1,17 @@
+theme = "nyxvamp-obsidian"
+
+[editor]
+line-number = "absolute"
+cursorline = true
+color-modes = true      # This makes the cursor change color in Nord's palette
+
+[editor.cursor-shape]
+insert = "bar"          # Thin bar for insert mode
+normal = "block"        # solid block for normal mode
+select = "underline"    # Underline for selection mode
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = ["file-type"]
+right = ["diagnostics", "selections", "position"]
+separator = "│"

@@ -1,6 +1,6 @@
-@define-color background #181926;
+@define-color background  #181926;
 @define-color second-background #292a35;
-@define-color text #f5e0dc;
+@define-color text #f4dbd6;
 @define-color borders #99d1db;
 @define-color focused #99d1db;
 @define-color focused2 #babbf1;
@@ -28,7 +28,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-    margin: 5px 5px 0 5px;
+    margin: 3px 5px 0 5px;
     padding: 0px 8px;
     background-color: @background;
     border: 0px solid rgba(153, 209, 219, 0.2); /* Subtle border from previous theme */
