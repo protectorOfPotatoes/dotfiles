@@ -187,11 +187,11 @@
         "modules": [
             "backlight",
             //"custom/split",
-            "pulseaudio" 
+            "wireplumber"
         ]
     },
 
-    "pulseaudio": {
+/*    "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon}{volume}%",
         "format-bluetooth": "{icon}{volume}% ",
@@ -206,11 +206,22 @@
             "car": " ", 
             "default": [" :", " :", " :"]
         },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ +5%",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ -5%",
         "on-click-right": "pavucontrol"
     },
+*/
+
+"wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "on-click": "pavucontrol",
+    "format-icons": ["", "", ""],
+    "max-volume": 150,
+    "scroll-step": 5
+},
+
 
     "backlight": {
         "format": "{icon} :{percent}%",
