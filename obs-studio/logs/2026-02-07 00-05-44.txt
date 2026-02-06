@@ -1,0 +1,160 @@
+00:05:44.165: Platform: Wayland
+00:05:44.165: CPU Name: Intel(R) Core(TM) i7-2640M CPU @ 2.80GHz
+00:05:44.165: CPU Speed: 3041.275MHz
+00:05:44.165: Physical Cores: 2, Logical Cores: 4
+00:05:44.165: Physical Memory: 7853MB Total, 4545MB Free
+00:05:44.165: Kernel Version: Linux 6.12.68-1-lts
+00:05:44.166: Distribution: "Arch Linux" Unknown
+00:05:44.166: Desktop Environment: niri (niri)
+00:05:44.166: Session Type: wayland
+00:05:44.168: Current Date/Time: 2026-02-07, 12:05:44 AM
+00:05:44.168: Browser Hardware Acceleration: true
+00:05:44.168: Qt Version: 6.10.2 (runtime), 6.10.1 (compiled)
+00:05:44.168: Portable mode: false
+00:05:44.259: OBS 32.0.4 (linux)
+00:05:44.259: ---------------------------------
+00:05:44.260: ---------------------------------
+00:05:44.260: audio settings reset:
+00:05:44.260: 	samples per sec: 48000
+00:05:44.260: 	speakers:        2
+00:05:44.260: 	max buffering:   960 milliseconds
+00:05:44.260: 	buffering type:  dynamically increasing
+00:05:44.262: ---------------------------------
+00:05:44.262: Initializing OpenGL...
+00:05:44.262: Using EGL/Wayland
+00:05:44.322: Initialized EGL 1.5
+00:05:44.340: Loading up OpenGL on adapter Intel Mesa Intel(R) HD Graphics 3000 (SNB GT2)
+00:05:44.340: OpenGL loaded successfully, version 3.3 (Core Profile) Mesa 25.3.4-arch1.1, shading language 3.30
+00:05:44.499: ---------------------------------
+00:05:44.500: video settings reset:
+00:05:44.500: 	base resolution:   1280x800
+00:05:44.500: 	output resolution: 1024x640
+00:05:44.500: 	downscale filter:  Bicubic
+00:05:44.500: 	fps:               30/1
+00:05:44.500: 	format:            NV12
+00:05:44.500: 	YUV mode:          Rec. 709/Partial
+00:05:44.500: NV12 texture support enabled
+00:05:44.500: P010 texture support not available
+00:05:44.504: Audio monitoring device:
+00:05:44.504: 	name: Default
+00:05:44.504: 	id: default
+00:05:44.506: ---------------------------------
+00:05:44.508: Failed to load 'en-US' text for module: 'decklink-captions.so'
+00:05:44.509: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+00:05:44.510: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+00:05:44.511: Failed to initialize module 'decklink.so'
+00:05:44.693: [pipewire] No capture sources available
+00:05:44.703: v4l2loopback not installed, virtual camera not registered
+00:05:44.724: LIBVA_DRIVER_NAME variable is set, this could prevent FFmpeg VAAPI from working correctly
+00:05:44.727: VAAPI: API version 1.22
+00:05:44.727: FFmpeg VAAPI H264 encoding supported
+00:05:44.728: FFmpeg VAAPI AV1 encoding not supported
+00:05:44.729: FFmpeg VAAPI HEVC encoding not supported
+00:05:44.734: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+00:05:44.734: 
+00:05:44.734: NVENC not supported
+00:05:44.734: Failed to initialize module 'obs-nvenc.so'
+00:05:44.741: Legacy intel-vaapi-driver detected, incompatible with QSV
+00:05:44.742: Legacy intel-vaapi-driver detected, incompatible with QSV
+00:05:44.763: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.6.3 | RPC Version: 1)
+00:05:44.763: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.10.1 | Qt version (run-time): 6.10.2
+00:05:44.763: [obs-websocket] [obs_module_load] Linked ASIO Version: 103600
+00:05:44.763: [obs-websocket] [Config::Load] Existing configuration not found, using defaults.
+00:05:44.763: [obs-websocket] [Config::Load] (FirstLoad) Generating new server password.
+00:05:44.769: [obs-websocket] [obs_module_load] Module loaded.
+00:05:44.774: ---------------------------------
+00:05:44.774:   Loaded Modules:
+00:05:44.774:     text-freetype2.so
+00:05:44.774:     rtmp-services.so
+00:05:44.774:     obs-x264.so
+00:05:44.774:     obs-websocket.so
+00:05:44.774:     obs-webrtc.so
+00:05:44.774:     obs-vst.so
+00:05:44.774:     obs-transitions.so
+00:05:44.774:     obs-qsv11.so
+00:05:44.774:     obs-outputs.so
+00:05:44.774:     obs-libfdk.so
+00:05:44.774:     obs-filters.so
+00:05:44.774:     obs-ffmpeg.so
+00:05:44.774:     linux-v4l2.so
+00:05:44.774:     linux-pulseaudio.so
+00:05:44.774:     linux-pipewire.so
+00:05:44.774:     linux-jack.so
+00:05:44.774:     linux-capture.so
+00:05:44.774:     linux-alsa.so
+00:05:44.774:     image-source.so
+00:05:44.774:     frontend-tools.so
+00:05:44.774:     decklink-output-ui.so
+00:05:44.774:     decklink-captions.so
+00:05:44.774: ---------------------------------
+00:05:44.774: ---------------------------------
+00:05:44.774: Available Encoders:
+00:05:44.774:   Video Encoders:
+00:05:44.774: 	- ffmpeg_svt_av1 (SVT-AV1)
+00:05:44.774: 	- ffmpeg_aom_av1 (AOM AV1)
+00:05:44.774: 	- ffmpeg_vaapi_tex (FFmpeg VAAPI H.264)
+00:05:44.774: 	- obs_x264 (x264)
+00:05:44.774:   Audio Encoders:
+00:05:44.774: 	- ffmpeg_aac (FFmpeg AAC)
+00:05:44.774: 	- ffmpeg_opus (FFmpeg Opus)
+00:05:44.774: 	- ffmpeg_pcm_s16le (FFmpeg PCM (16-bit))
+00:05:44.774: 	- ffmpeg_pcm_s24le (FFmpeg PCM (24-bit))
+00:05:44.774: 	- ffmpeg_pcm_f32le (FFmpeg PCM (32-bit float))
+00:05:44.774: 	- ffmpeg_alac (FFmpeg ALAC (24-bit))
+00:05:44.774: 	- ffmpeg_flac (FFmpeg FLAC (16-bit))
+00:05:44.774: 	- libfdk_aac (libfdk AAC)
+00:05:44.774: ==== Startup complete ===============================================
+00:05:44.780: No scene file found, creating default scene
+00:05:44.817: All scene data cleared
+00:05:44.817: ------------------------------------------------
+00:05:44.835: Device for 'Audio Output Capture' source Desktop Audio is also used for audio monitoring.
+00:05:44.835: Deduplication logic is being applied to all monitored sources.
+00:05:44.835: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.10) 15.0.0'
+00:05:44.835: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+00:05:44.835: pulse-input: Started recording from 'alsa_output.pci-0000_00_1b.0.analog-stereo.monitor' (default)
+00:05:44.836: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.10) 15.0.0'
+00:05:44.836: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+00:05:44.836: pulse-input: Started recording from 'alsa_input.pci-0000_00_1b.0.analog-stereo' (default)
+00:05:44.838: Switched to scene 'Scene'
+00:05:44.838: Created scene collection 'Untitled' (clean, Untitled.json)
+00:05:44.838: ------------------------------------------------
+00:05:44.846: Device for 'Audio Output Capture' source Desktop Audio is also used for audio monitoring.
+00:05:44.846: Deduplication logic is being applied to all monitored sources.
+00:05:45.434: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Desktop Audio)
+00:05:45.434: 
+00:05:46.502: [rtmp-services plugin] Successfully updated file 'services.json' (version 284)
+00:05:46.502: [rtmp-services plugin] Successfully updated package (version 284)
+00:07:11.969: virtual void QtWaylandClient::QWaylandTextInputv3::disableSurface(wl_surface*) Try to disable surface 0x5c068e37bcf0 with focusing surface 0x5c068e3bad90
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.074: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:08:59.075: Cannot open file '/usr/share/obs/obs-studio/themes/Dark/close.svg', because: No such file or directory
+00:19:13.979: Last log entry repeated for 56852 more lines
+00:19:13.979: The Wayland connection broke. Did the Wayland compositor die?

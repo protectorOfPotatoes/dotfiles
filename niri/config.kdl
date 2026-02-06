@@ -170,7 +170,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#e5c890"
 
         // Color of the ring on inactive monitors.
         //
@@ -281,6 +281,12 @@ spawn-at-startup "swaybg" "-i" "/home/adi/wallpaper/back.png" "-m" "fill"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}
+
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
     // skip-at-startup
@@ -376,6 +382,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+T hotkey-overlay-title="Toggle waybar" { spawn "sh" "-c" "pkill waybar || waybar"; }
+    Mod+Shift+S { spawn-sh "~/.config/niri/scripts/record.sh"; }
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
@@ -610,10 +617,11 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
     //My personal commands
-    Mod+Shift+A hotkey-overlay-title="Took A Screenshot" {spawn-sh "grim ~/Pictures/$(date +'%Y-%m-%d_%H-%M-%S').png";}
+    Mod+Shift+A hotkey-overlay-title="Take A Screenshot" {spawn-sh "grim ~/Pictures/$(date +'%Y-%m-%d_%H-%M-%S').png";}
 
 
-    Print { screenshot; }
+    
+  Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
