@@ -40,7 +40,7 @@
     "custom/arch": {
         "format": "󰣇 ",
         "tooltip": false,
-        "on-click": "kitty"
+        "on-click": "fuzzel"
     },
 /*    "custom/visualizer": {
     "exec": "python3 ~/.config/waybar/scripts/waybar_cava.py",
@@ -66,7 +66,7 @@
 
 "custom/filemanager":{
   "format":"    ",
-  "on-click": "kitty -e yazi"
+  "on-click": "kitty -e sh -c 'EDITOR=helix yazi'"
 },
 
 
