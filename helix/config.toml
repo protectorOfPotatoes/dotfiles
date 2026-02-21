@@ -1,7 +1,7 @@
 theme = "nyxvamp-obsidian"
 
 [editor]
-line-number = "absolute"
+line-number = "relative"
 cursorline = true
 color-modes = true      # This makes the cursor change color in Nord's palette
 

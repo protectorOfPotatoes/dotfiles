@@ -1,0 +1,7 @@
+[Recent Dirs]
+KdenliveClipFolder[$e]=$HOME/Videos,$HOME/Documents
+KdenliveProjectsFolder[$e]=$HOME/Videos,$HOME/Documents
+
+[UiSettings]
+ColorScheme=BreezeDark
+ColorSchemePath=BreezeDark.colors

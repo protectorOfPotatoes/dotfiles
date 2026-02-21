@@ -1,6 +1,6 @@
 @define-color background  #11111b;
 @define-color second-background #292a35;
-@define-color text #f4dbd6;
+@define-color text  #f4dbd6;
 @define-color borders #99d1db;
 @define-color focused #99d1db;
 @define-color focused2 #babbf1;
@@ -28,11 +28,11 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-    margin: 3px 5px 0 5px;
+    margin: 0px 0px 0px 0px;
     padding: 0px 8px;
     background-color: @background;
     border: 0px solid rgba(153, 209, 219, 0.2); /* Subtle border from previous theme */
-    border-radius: 50px;
+    border-radius: 50;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -45,7 +45,7 @@ window#waybar {
     background: @background; 
     padding: 0 10px;
     margin-left: 10px;
-    border-radius: 50px;
+    border-radius: 50;
     font-family: "Hack Nerd Font";
 }
 
@@ -73,7 +73,7 @@ window#waybar {
     padding: 0 8px;
     color: @text;
     background: @background;
-    border-radius: 50px;
+    border-radius: 50;
     transition: all 0.2s ease;
 }
 
@@ -111,11 +111,11 @@ font-weight: bold;
     padding: 0 10px; /* Sufficient padding for content */
     /* This makes the text pop against the background */
     text-shadow: 0 0 2px rgba(0,0,0,0.5);
-    border-radius: 50px;
+    border-radius: 50;
 }
 #clock:hover{
 background-color: @second-background;
-    border-radius: 50px;
+    border-radius: 50;
 
 }
 
@@ -153,7 +153,7 @@ background-color: @second-background;
 /* Hover effects for all right modules */
  #battery:hover, #network:hover, #pulseaudio:hover, #backlight:hover, #cpu:hover, #memory:hover {
     background-color: @second-background;
-    border-radius: 50px;
+    border-radius: 50;
 }
 
 /* Battery States */

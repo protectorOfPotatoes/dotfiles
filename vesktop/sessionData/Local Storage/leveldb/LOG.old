@@ -1,0 +1,6 @@
+2026/02/20-21:51:23.709 efc Reusing MANIFEST /home/adi/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
+2026/02/20-21:51:23.759 efc Recovering log #125
+2026/02/20-21:51:23.762 efc Reusing old log /home/adi/.config/vesktop/sessionData/Local Storage/leveldb/000125.log 
+2026/02/20-21:53:25.159 f24 Level-0 table #129: started
+2026/02/20-21:53:25.163 f24 Level-0 table #129: 42145 bytes OK
+2026/02/20-21:53:25.166 f24 Delete type=0 #125

@@ -1,8 +1,9 @@
 [{
     "layer": "top",
     "position": "top",
-    "height": 35,
-    "spacing": 5,
+    "exclusive": true,
+    "height": 20,
+    "spacing": 0,
 
     "modules-left": [
         "group/Utilities",
@@ -31,9 +32,8 @@
         "orientation": "horizontal",
         "modules": [
             "custom/arch",
-            //"custom/split",
-            "custom/power"
-            //"custom/split"
+            "custom/power",
+            "custom/wallpaper"
         ]
     },
 
@@ -42,6 +42,19 @@
         "tooltip": false,
         "on-click": "fuzzel"
     },
+
+    "custom/power": {
+          "format" : "   ",
+          "tooltip": false,
+          "on-click": "bash ~/.config/niri/powermenu.sh"
+        },
+
+    "custom/wallpaper": {
+        "format": " 󰸉  ",
+        "on-click": "~/.config/niri/swww_random.sh",
+        "tooltip": false
+    },
+
 /*    "custom/visualizer": {
     "exec": "python3 ~/.config/waybar/scripts/waybar_cava.py",
     "format": "{}",
@@ -51,37 +64,29 @@
 {
   "orientation": "horizontal",
   "modules": [
-    "custom/discord", "custom/firefox", "custom/filemanager", "custom/obsidian"]
+    "custom/vesktop", "custom/zen", "custom/filemanager" ]
 },
 
-"custom/discord":{
-"format": "     ",
-"on-click": "flatpak run com.discordapp.Discord"
+"custom/vesktop":{
+"format": "    ",
+"on-click": "vesktop"
 },
 
-"custom/firefox":{
-"format":"    ",
-"on-click": "firefox"
+"custom/zen":{
+"format":"    ",
+"on-click": "zen-browser"
 },
 
 "custom/filemanager":{
-  "format":"    ",
-  "on-click": "kitty -e sh -c 'EDITOR=helix yazi'"
+  "format":"    ",
+  "on-click": "foot -e sh -c 'EDITOR=helix yazi'"
 },
 
 
 "custom/obsidian":{
-  "format":" 󰏫   ",
+  "format":"  󰏫   ",
   "on-click": "obsidian"
 },
-
-
-"custom/power": {
-          "format" : "   ",
-          "tooltip": false,
-          "on-click": "wlogout", // Opens your wlogout menu
-          "on-click-right": "wlogout --protocol layer-shell"
-        },
 
 /*    "idle_inhibitor": {
         "format": "{icon}",
@@ -134,10 +139,10 @@
 "niri/window": {
     "format": "{app_id}",
     "rewrite": {
-        // Firefox icon ()
-        "(.*)firefox": " ",
-        "(.*)kitty": " ",
-        "(.*)discord": " ",
+        // zen icon ()
+        "(.*)zen": " ",
+        "(.*)foot": " ",
+        "(.*)vesktop": " ",
 
         "(.*)": "$1"
     },
@@ -173,13 +178,13 @@
     "cpu": {
         "format": "CPU:{usage}%",
         "interval": 2,
-        "on-click": "kitty -e htop"
+        "on-click": "foot -e htop"
     },
 
     "memory": {
         "format": "RAM:{}%",
         "interval": 2,
-        "on-click": "kitty -e htop"
+        "on-click": "foot -e htop"
     },
 
     "group/brightvol": {
@@ -224,7 +229,7 @@
 
 
     "backlight": {
-        "format": "{icon} :{percent}%",
+        "format": "{icon}:{percent}%",
         "format-icons": [" ", " ", "󰖨 "],
         "on-click": "~/.config/waybar/scripts/brightness_slider.sh"
     },
@@ -236,25 +241,25 @@
             "network",
             "custom/bluetooth",
             "battery",
-            "custom/swaync"
+            "custom/nirinc"
         ]
     },
 
     "network": {
         "interface": "wlan0",
-        "format-wifi": "{icon}",
+        "format-wifi": "{icon} ",
         "format-ethernet": "{ifname}󰈀 LAN",
         "format-disconnected": "󰖪",
         "tooltip-format": "{ipaddr}\n{ssid} ({signalStrength}%)",
-        "on-click": "kitty -e nmcli device wifi list",
+        "on-click": "foot -e gazelle",
         "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ]
     },
 
    "custom/bluetooth": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
+        "format": "  ",
+        //"exec": "~/.config/waybar/scripts/bluetooth_status.sh",
         "interval": 5,
-        "on-click": "blueman-manager"
+        "on-click": "foot -e bluetoothctl"
     },
 
     "battery": {
@@ -270,10 +275,22 @@
        
     },
 
-    "custom/swaync": {
-        "format": "",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client --toggle-panel",
-        "interval": 0
+    "custom/nirinc": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "command -v nirincctl",
+    "exec": "nirinc-waybar", // This requires the nirinc-waybar script or similar mechanism
+    "on-click": "nirincctl mode -t do-not-disturb",
+    "on-click-right": "nirincctl dismiss -a",
+    "interval": 1
     }
 }]

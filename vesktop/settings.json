@@ -1,0 +1,9 @@
+{
+    "discordBranch": "stable",
+    "minimizeToTray": true,
+    "arRPC": true,
+    "spellCheckLanguages": [
+        "en-US",
+        "en"
+    ]
+}

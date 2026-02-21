@@ -1,0 +1,6 @@
+2026/02/20-19:22:51.655 a48 Reusing MANIFEST /home/adi/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2026/02/20-19:22:51.664 a48 Recovering log #30
+2026/02/20-19:22:51.667 a48 Reusing old log /home/adi/.config/discord/Local Storage/leveldb/000030.log 
+2026/02/20-19:23:51.670 a49 Level-0 table #34: started
+2026/02/20-19:23:51.764 a49 Level-0 table #34: 4422045 bytes OK
+2026/02/20-19:23:51.767 a49 Delete type=0 #30
