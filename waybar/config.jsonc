@@ -1,13 +1,14 @@
 [{
     "layer": "top",
     "position": "top",
-    "height": 40,
-    "spacing": 5,
+    "exclusive": true,
+    "height": 20,
+    "spacing": 0,
 
     "modules-left": [
         "group/Utilities",
         "group/workspaces",
-        "custom/visualizer"
+        "group/appmenu"
     ],
 
     "modules-center": [
@@ -31,9 +32,8 @@
         "orientation": "horizontal",
         "modules": [
             "custom/arch",
-            //"custom/split",
-            "custom/power"
-            //"custom/split"
+            "custom/power",
+            "custom/wallpaper"
         ]
     },
 
@@ -42,18 +42,51 @@
         "tooltip": false,
         "on-click": "fuzzel"
     },
-    "custom/visualizer": {
+
+    "custom/power": {
+          "format" : "   ",
+          "tooltip": false,
+          "on-click": "bash ~/.config/niri/powermenu.sh"
+        },
+
+    "custom/wallpaper": {
+        "format": " 󰸉  ",
+        "on-click": "~/.config/niri/swww_random.sh",
+        "tooltip": false
+    },
+
+/*    "custom/visualizer": {
     "exec": "python3 ~/.config/waybar/scripts/waybar_cava.py",
     "format": "{}",
     "restart-interval": 1
+},*/
+"group/appmenu":
+{
+  "orientation": "horizontal",
+  "modules": [
+    "custom/vesktop", "custom/zen", "custom/filemanager" ]
 },
 
-"custom/power": {
-          "format" : "   ",
-          "tooltip": false,
-          "on-click": "wlogout", // Opens your wlogout menu
-          "on-click-right": "wlogout --protocol layer-shell"
-        },
+"custom/vesktop":{
+"format": "    ",
+"on-click": "vesktop"
+},
+
+"custom/zen":{
+"format":"    ",
+"on-click": "zen-browser"
+},
+
+"custom/filemanager":{
+  "format":"    ",
+  "on-click": "foot -e sh -c 'EDITOR=helix yazi'"
+},
+
+
+"custom/obsidian":{
+  "format":"  󰏫   ",
+  "on-click": "obsidian"
+},
 
 /*    "idle_inhibitor": {
         "format": "{icon}",
@@ -106,10 +139,10 @@
 "niri/window": {
     "format": "{app_id}",
     "rewrite": {
-        // Firefox icon ()
-        "(.*)firefox": " ",
-        "(.*)kitty": " ",
-        "(.*)discord": " ",
+        // zen icon ()
+        "(.*)zen": " ",
+        "(.*)foot": " ",
+        "(.*)vesktop": " ",
 
         "(.*)": "$1"
     },
@@ -145,13 +178,13 @@
     "cpu": {
         "format": "CPU:{usage}%",
         "interval": 2,
-        "on-click": "kitty -e htop"
+        "on-click": "foot -e htop"
     },
 
     "memory": {
         "format": "RAM:{}%",
         "interval": 2,
-        "on-click": "kitty -e htop"
+        "on-click": "foot -e htop"
     },
 
     "group/brightvol": {
@@ -159,35 +192,45 @@
         "modules": [
             "backlight",
             //"custom/split",
-            "pulseaudio" 
+            "wireplumber"
         ]
     },
 
-    "pulseaudio": {
+/*    "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon}{volume}%",
         "format-bluetooth": "{icon}{volume}% ",
         "format-bluetooth-muted": "{ icon}",
-        "format-muted": " ",
+        "format-muted": "󰝟 ",
         "format-icons": {
             "headphone": " ",
             "hands-free": " ",
-            "headset": " ",
+            "headset": "󰋎 ",
             "phone": " ",
             "portable": " ",
             "car": " ", 
-            "WH-CH520": " ",
             "default": [" :", " :", " :"]
         },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ +5%",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ -5%",
         "on-click-right": "pavucontrol"
     },
+*/
+
+"wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "on-click": "pavucontrol",
+    "format-icons": ["", "", ""],
+    "max-volume": 150,
+    "scroll-step": 5
+},
+
 
     "backlight": {
-        "format": "{icon} :{percent}%",
-        "format-icons": ["", "", "🌙"],
+        "format": "{icon}:{percent}%",
+        "format-icons": [" ", " ", "󰖨 "],
         "on-click": "~/.config/waybar/scripts/brightness_slider.sh"
     },
 
@@ -198,25 +241,25 @@
             "network",
             "custom/bluetooth",
             "battery",
-            "custom/swaync"
+            "custom/nirinc"
         ]
     },
 
     "network": {
         "interface": "wlan0",
-        "format-wifi": "{icon}",
+        "format-wifi": "{icon} ",
         "format-ethernet": "{ifname}󰈀 LAN",
         "format-disconnected": "󰖪",
         "tooltip-format": "{ipaddr}\n{ssid} ({signalStrength}%)",
-        "on-click": "kitty -e nmcli device wifi list",
+        "on-click": "foot -e gazelle",
         "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ]
     },
 
    "custom/bluetooth": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
+        "format": "  ",
+        //"exec": "~/.config/waybar/scripts/bluetooth_status.sh",
         "interval": 5,
-        "on-click": "blueman-manager"
+        "on-click": "foot -e bluetoothctl"
     },
 
     "battery": {
@@ -232,11 +275,22 @@
        
     },
 
-    "custom/swaync": {
-        "format": "",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client --toggle-panel",
-        "interval": 0
+    "custom/nirinc": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "command -v nirincctl",
+    "exec": "nirinc-waybar", // This requires the nirinc-waybar script or similar mechanism
+    "on-click": "nirincctl mode -t do-not-disturb",
+    "on-click-right": "nirincctl dismiss -a",
+    "interval": 1
     }
 }]
-

@@ -1,0 +1,127 @@
+set $terminal foot
+set $mod Mod4
+set $menu tofi-run | xargs swaymsg exec --
+set $notification swaync
+seat seat0 xcursor_theme Bibata-Modern-Ice 24
+
+
+set $rosewater #f5e0dc
+set $flamingo #f2cdcd
+set $pink #f5c2e7
+set $mauve #cba6f7
+set $red #f38ba8
+set $maroon #eba0ac
+set $peach #fab387
+set $yellow #f9e2af
+set $green #a6e3a1
+set $teal #94e2d5
+set $sky #89dceb
+set $sapphire #74c7ec
+set $blue #89b4fa
+set $lavender #b4befe
+set $text #cdd6f4
+set $subtext1 #bac2de
+set $subtext0 #a6adc8
+set $overlay2 #9399b2
+set $overlay1 #7f849c
+set $overlay0 #6c7086
+set $surface2 #585b70
+set $surface1 #45475a
+set $surface0 #313244
+set $base #1e1e2e
+set $mantle #181825
+set $crust #11111b
+
+# Autoexec
+
+client.focused           $lavender $mantle $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $mantle $text  $rosewater $overlay0
+client.unfocused         $overlay0 $mantle $text  $rosewater $overlay0
+client.urgent            $peach    $mantle $peach $overlay0  $peach
+client.placeholder       $overlay0 $mantle $text  $overlay0  $overlay0
+client.background        $mantle
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+exec --no-startup-id swaybg -i $HOME/wallpaper/back.png -m fill
+exec --no-startup-id waybar
+exec --no-startup-id $terminal
+exec --no-startup-id $notification
+# Keybinds
+
+
+bindsym $mod+Return exec $terminal
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+a exec grim ~/Pictures/$(date +'%Y-%m-%d_%H-%M-%S').png
+
+floating_modifier $mod normal
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+f fullscreen toggle
+bindsym $mod+v splitv
+bindsym $mod+h splith
+bindsym $mod+Tab focus next
+
+#Layout
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+
+bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+e exit
+ 
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@  mute toggle
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 1%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%-
+bindsym XF86KbdBrightnessUp exec --no-startup-id brightnessctl --device='smc::kbd_backlight' set 20%+ 
+bindsym XF86KbdBrightnessDown exec --no-startup-id brightnessctl --device='smc::kbd_backlight' set 20%- 
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# General
+
+output LVDS-1 scale 1.0
+
+default_border pixel 0
+gaps inner 7
+gaps outer 0
+
+input * {
+    xkb_layout us
+    #xkb_options grp:caps_toggle
+
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+}
+
