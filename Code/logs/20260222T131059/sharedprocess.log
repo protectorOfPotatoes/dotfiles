@@ -1,0 +1,3 @@
+2026-02-22 13:11:03.223 [info] Started initializing default profile extensions in extensions installation folder. file:///home/adi/.vscode/extensions
+2026-02-22 13:11:03.584 [warning] Failed to create default profile extensions manifest in extensions installation folder. file:///home/adi/.vscode/extensions Unable to create file 'vscode-userdata:/home/adi/.vscode/extensions/extensions.json' that already exists when overwrite flag is not set
+2026-02-22 13:11:03.585 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/adi/.vscode/extensions

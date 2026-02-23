@@ -46,12 +46,12 @@
     "custom/power": {
           "format" : "   ",
           "tooltip": false,
-          "on-click": "bash ~/.config/niri/powermenu.sh"
+          "on-click": "bash ~/.config/scripts/powermenu.sh"
         },
 
     "custom/wallpaper": {
         "format": " 󰸉  ",
-        "on-click": "~/.config/niri/swww_random.sh",
+        "on-click": "~/.config/scripts/swww_random.sh",
         "tooltip": false
     },
 
