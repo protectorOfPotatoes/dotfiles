@@ -79,7 +79,7 @@
 
 "custom/filemanager":{
   "format":"    ",
-  "on-click": "foot -e sh -c 'EDITOR=helix yazi'"
+  "on-click": "foot -e  yazi"
 },
 
 

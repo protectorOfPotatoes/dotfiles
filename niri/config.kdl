@@ -159,7 +159,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-         // off
+          off
 
         // How many logical pixels the ring extends out from the windows.
         width 1
@@ -201,8 +201,8 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 5
-        active-color "#ffc87f"
+        width 2
+        active-color "#04a5e5"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
@@ -273,10 +273,9 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swww" "img" "$HOME/Downloads/wallpapers/back.png" "--outputs" "LVDS-1"
-spawn-at-startup "dbus-update-activation-environment --systemd EDITOR=helix"
+spawn-at-startup "dbus-update-activation-environment --systemd EDITOR='kakoune'"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -314,7 +313,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+     slowdown 1.5
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -624,7 +623,7 @@ binds {
 
 
     
-  Print { screenshot; }
+    Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
@@ -637,7 +636,7 @@ binds {
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
 //Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-    Mod+Escape {spawn-sh "bash ~/.config/niri/powermenu.sh";}
+    Mod+Escape {spawn-sh "bash ~/.config/scripts/powermenu.sh";}
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
