@@ -1,0 +1,5 @@
+#!/bin/bash
+export XDG_RUNTIME_DIR=/run/user/$(id -u adi)
+export WAYLAND_DISPLAY=wayland-0
+
+exec chpst -u adi waybar

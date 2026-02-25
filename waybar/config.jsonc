@@ -3,7 +3,11 @@
     "position": "top",
     "exclusive": true,
     "height": 20,
-    "spacing": 0,
+    "margin-top": 3,
+    "margin-left": 3,
+    "margin-right": 3,
+    "margin-bottom": 0,
+    "spacing": 5,
 
     "modules-left": [
         "group/Utilities",
@@ -263,7 +267,8 @@
     },
 
     "battery": {
-        "states": {
+        "bat": "BAT0",
+	"states": {
             "warning": 30,
             "critical": 15
         },

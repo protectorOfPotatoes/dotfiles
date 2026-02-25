@@ -159,7 +159,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-          off
+         off
 
         // How many logical pixels the ring extends out from the windows.
         width 1
@@ -274,7 +274,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "swww" "img" "$HOME/Downloads/wallpapers/back.png" "--outputs" "LVDS-1"
+spawn-at-startup "swww" "img" "$HOME/Downloads/wallpapers/back.png" "transition-type" "outer"  "--outputs" "LVDS-1"
 spawn-at-startup "dbus-update-activation-environment --systemd EDITOR='kakoune'"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -314,6 +314,8 @@ animations {
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
      slowdown 1.5
+
+
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -362,6 +364,14 @@ window-rule {
 layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true
+}
+
+window-rule {
+    match app-id="ulauncher"
+    
+    open-floating true
+    default-column-width { proportion 0.5; }
+      
 }
 
 binds {
