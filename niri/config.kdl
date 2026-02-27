@@ -282,7 +282,7 @@ spawn-at-startup "dbus-update-activation-environment --systemd EDITOR='kakoune'"
 
 cursor {
     xcursor-theme "Bibata-Modern-Ice"
-    xcursor-size 24
+    xcursor-size 22
 }
 
 hotkey-overlay {
@@ -367,7 +367,7 @@ layer-rule {
 }
 
 window-rule {
-    match app-id="ulauncher"
+    match app-id="fuzzel"
     
     open-floating true
     default-column-width { proportion 0.5; }
@@ -392,6 +392,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot";  }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel";}
+    Mod+Period hotkey-overlay-title="Run an Emoji Launcher: fuzzel" {spawn "rofimoji" "--selector" "fuzzel" "--action" "copy";} 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+S { spawn-sh "~/.config/niri/scripts/record.sh"; }
     Mod+T {spawn "sh" "-c" "pkill  waybar || waybar";}
@@ -404,10 +405,10 @@ binds {
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
     // "-l 1.0" limits the volume to 100%.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+ -l 4.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 4.0";  }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"; 	}
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; 	}
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; 	}
 
     // Example media keys mapping using playerctl.
     // This will work with any MPRIS-enabled media player.
@@ -578,7 +579,7 @@ binds {
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    //    Mod+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.

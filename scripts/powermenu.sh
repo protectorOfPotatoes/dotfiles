@@ -10,7 +10,7 @@ chosen=$(echo -e "$options" | fuzzel --dmenu -p "Power Menu: ")
 case "$chosen" in
     *Lock) swaylock ;; # Or hyprlock
     *Suspend) systemctl suspend ;;
-    *"Log out") swaymsg exit ;; # Or hyprctl dispatch exit
+    *"Log out") niri msg action quit;; # Or hyprctl dispatch exit
     *Reboot) systemctl reboot ;;
     *Shutdown) systemctl poweroff ;;
 esac
