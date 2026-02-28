@@ -4,13 +4,13 @@
 options="Lock\nSuspend\nLog out\nReboot\nShutdown"
 
 # Run fuzzel
-chosen=$(echo -e "$options" | fuzzel --dmenu -p "Power Menu: ")
+chosen=$(echo -e "$options" | fuzzel --dmenu -p "⏻   ")
 
 # Act on selection
 case "$chosen" in
-    *Lock) swaylock ;; # Or hyprlock
+    *Lock)  swaylock ;;
     *Suspend) systemctl suspend ;;
-    *"Log out") niri msg action quit;; # Or hyprctl dispatch exit
+    *"Log out") niri msg action quit;;
     *Reboot) systemctl reboot ;;
     *Shutdown) systemctl poweroff ;;
 esac
