@@ -68,24 +68,33 @@
 {
   "orientation": "horizontal",
   "modules": [
-    "custom/vesktop", "custom/zen", "custom/filemanager" ]
+     "custom/discord", "custom/browser", "custom/filemanager", "custom/code" ]
 },
 
-"custom/vesktop":{
-"format": "    ",
+"custom/discord":{
+"format": "  ",
 "on-click": "vesktop"
 },
 
-"custom/zen":{
-"format":"    ",
+"custom/browser":{
+"format":"    ",
 "on-click": "zen-browser"
 },
 
 "custom/filemanager":{
-  "format":"    ",
-  "on-click": "foot -e  yazi"
+  "format":"    ",
+  "on-click": "foot -e  spf"
 },
 
+
+"custom/terminal":{
+  "format":"  ",
+  "on-click": "foot"
+},
+"custom/code":{
+  "format":"    ",
+  "on-click": "foot -e  spf ~/Projects"
+},
 
 "custom/obsidian":{
   "format":"  󰏫   ",
